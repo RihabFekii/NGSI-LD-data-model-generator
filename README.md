@@ -1,4 +1,4 @@
-# Creating an NGSI-LD data model from scratch [<img src="https://img.shields.io/badge/NGSI-LD-d6604d.svg" width="90"  position:"left"/>] 
+# 'Creating an NGSI-LD data model from scratch' [<img src="https://img.shields.io/badge/NGSI-LD-d6604d.svg" width="90" />] 
 
 This tutorial introduces basics of common Linked Data concepts and Data Models for **NGSI-LD** developers. The aim is to
 design and create a simple interoperable Smart Water Quality assesment solution from scratch and explain how to apply these
