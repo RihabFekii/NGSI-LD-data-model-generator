@@ -1,5 +1,4 @@
-# 'Creating an NGSI-LD data model from scratch' [<img src="https://img.shields.io/badge/NGSI-LD-d6604d.svg" width="90" />]
-
+# Creating an NGSI-LD data model from scratch [<img src="https://img.shields.io/badge/NGSI-LD-d6604d.svg" width="90"  position:"left"/>] 
 
 This tutorial introduces basics of common Linked Data concepts and Data Models for **NGSI-LD** developers. The aim is to
 design and create a simple interoperable Smart Water Quality assesment solution from scratch and explain how to apply these
@@ -57,7 +56,7 @@ To create a data model you need to go through the following steps: 
 
 ## Creating a baseline data model using Swagger:
 
-To create the baseline data model it is recommended to use the Swagger online editor, once you have it save it in a <basemodel_file>.yaml 
+To create the baseline data model it is recommended to use the (Swagger online editor([https://editor.swagger.io/])), once you have it save it in a <basemodel_file>.yaml 
 PS: the models are defined within the Smart Data Models domain.
 This is a template for a basemodel
 
