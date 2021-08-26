@@ -7,7 +7,7 @@ concepts to your own smart solutions.
 The tutorial is mainly concerned with online and command-line tooling.
 
 
-# Understanding `@context`
+## Understanding `@context`
 
 Creating an interoperable system of readable links for computers requires the use of a well defined data format
 ([JSON-LD](http://json-ld.org/)) and assignation of unique IDs
@@ -19,9 +19,9 @@ get in the way of the processing the data objects themselves.
 An attempt to solve this interoperability problem has been made within the JSON domain, and this has been done by adding
 an `@context` element to existing JSON data structures. This has led to the creation of the **JSON-LD** standard.
 
-# Prerequisites
+## Prerequisites
 
-## Swagger
+### Swagger
 
 The OpenAPI Specification (commonly known as Swagger) is an API description format for REST APIs. A Swaggger spec allows
 you to describe an entire API (such as NGSI-LD itself) however in this tutorial we shall be concentrating on using
@@ -32,7 +32,7 @@ The complete OpenAPI Specification can be found on GitHub:
 [OpenAPI 3.0 Specification](https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.0.2.md). This is
 important since we will need a well defined structure to be able to generate `@context` files.
 
-## Docker
+### Docker
 
 To keep things interoperable across different environments the file generator be run using
 [Docker](https://www.docker.com). **Docker** is a container technology which allows to different components isolated
