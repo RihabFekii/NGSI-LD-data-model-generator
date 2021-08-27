@@ -15,8 +15,8 @@ components:
           $ref: https://fiware.github.io/tutorials.NGSI-LD/models/saref-terms.yaml#/fillingLevel
     
 
-    # This is reduced list of the defined building categories within
-    # the Smart AgriFood domain
+    # This is reduced list of the defined building categories within the Smart AgriFood domain
+    
     BuildingCategories: 
       enum:
         # Accommodation
