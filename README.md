@@ -56,8 +56,10 @@ To create a data model you need to go through the following steps: 
 ## Creating an NGSI-LD data model using Swagger:
 
 To create an NGSI-LD data model it is recommended to use the [Swagger online editor](https://editor.swagger.io/), once you have it save it in a `<datamodel_file>.yaml` 
+
 PS: the models are defined within the Smart Data Models domain.
-This is a template for an NGSI-LD data model
+
+This is a template for an NGSI-LD data model: 
 
 ```yaml
 --- 
@@ -67,13 +69,13 @@ components:
       description: 'Give a description of your data model, its scope and what it is used for.'
       properties:
         Entity 1:
-		  description: 'Description of entity 1'
-		  minimum: 0
-		  maximum: 1
-		  type: e.g array, boolean, integer, number, object, string
+          description: 'Description of entity 1'
+          minimum: 0
+          maximum: 1
+          type: e.g array, boolean, integer, number, object, string
         Entity N:
-		  description: 'Description of entity N'
-		  type: e.g array, boolean, integer, number, object, string
+          description: 'Description of entity N'
+          type: e.g array, boolean, integer, number, object, string
 info: 
   description: "Base Model Definitions from Smart Data Models"
   title: Data model title
@@ -92,6 +94,7 @@ paths:
             application/ld+json: 
               schema: 
                 type: object
+
 ```
 
 Once you have created your data model, you can export it to a Yaml file by clicking on `File>Save as Yaml`
