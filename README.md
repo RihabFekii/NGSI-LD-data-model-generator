@@ -34,9 +34,8 @@ important since we will need a well defined structure to be able to generate `@c
 
 ### Docker
 
-To keep things interoperable across different environments the file generator be run using
-[Docker](https://www.docker.com). **Docker** is a container technology which allows to different components isolated
-into their respective environments.
+To keep things interoperable across different environments, the file generator is running on
+[Docker](https://www.docker.com). **Docker** is a container technology which allows to different components isolated into their respective environments.
 
 -   To install Docker on Windows follow the instructions [here](https://docs.docker.com/docker-for-windows/)
 -   To install Docker on Mac follow the instructions [here](https://docs.docker.com/docker-for-mac/)
@@ -48,47 +47,86 @@ into their respective environments.
 In this tutorial I will create a data model for water quality assessment. I am implementing a solution which predicts the potability of water based on water metrics which are the following: "ph", "Hardness", "Solids", "Chloramines", "Sulfate", "Conductivity",  "Organic_carbon", "Trihalomethane", "Turbidity",  "Potability".
 
 To create a data model you need to go through the following steps: 
-1. Creating a baseline data model using Swagger
+1. Creating an NGSI-LD data model using Swagger
 2. Validating the data model
 3. Generating the NGSI-LD @context file
 4. Creating entities in the Context Broker
 5. Writing the API to get notifications from the Context Broker
 
-## Creating a baseline data model using Swagger:
+## Creating an NGSI-LD data model using Swagger:
 
-To create the baseline data model it is recommended to use the (Swagger online editor([https://editor.swagger.io/])), once you have it save it in a <basemodel_file>.yaml 
+To create an NGSI-LD data model it is recommended to use the [Swagger online editor](https://editor.swagger.io/), once you have it save it in a `<datamodel_file>.yaml` 
 PS: the models are defined within the Smart Data Models domain.
-This is a template for a basemodel
+This is a template for an NGSI-LD data model
 
-[<img src="https://cdn-images-1.medium.com/max/1600/1*obZU_t1lfSiXUR4-POtOLQ.png" />]
+```yaml
+--- 
+components: 
+  schemas:
+    Data_model_name:
+      description: 'Give a description of your data model, its scope and what it is used for.'
+      properties:
+        Entity 1:
+			description: 'Description of entity 1'
+			minimum: 0
+			maximum: 1
+			type: e.g array, boolean, integer, number, object, string
+        Entity N:
+			description: 'Description of entity N'
+			type: e.g array, boolean, integer, number, object, string
+info: 
+  description: "Base Model Definitions from Smart Data Models"
+  title: Data model title
+  version: "1.0.0"
+openapi: "3.0.0"
 
-Once you have created your base model, you can export it to a Yaml file by clicking on File>Save as Yaml 
+# These paths are merely representative.
+paths: 
+  /ngsi-ld/v1/entities: 
+    get: 
+      responses: 
+        ? "200"
+        : 
+          description:  OK
+          content: 
+            application/ld+json: 
+              schema: 
+                type: object
+```
+
+Once you have created your data model, you can export it to a Yaml file by clicking on `File>Save as Yaml`
 
 
 ## Validating your Swagger data model
 
 It is necessary to check that the model is valid before processing, this can be done by viewing it online or by using a simple validator tool.
+
 To validate you data model you need to: 
-Clone this project: https://github.com/FIWARE/tutorials.Understanding-At-Context/tree/NGSI-LD
-We need to activate the NGSI-LD generator tool by executing this command in the terminal: 
+* Clone this project: https://github.com/FIWARE/tutorials.Understanding-At-Context/tree/NGSI-LD
+* Copy your <datamodel>.yaml file in this project directory
+* Activate the NGSI-LD generator tool by executing this command in the terminal: 
 
 ```console
 ./services create
 ```
 
-In the terminal execute this command to validate your data model: 
+* Validate your data model by executing this command In the terminal: 
 
 ```console
 ./services validate [file.yaml]
 ```
-In case of success you get this response in the terminal: 
+
+⋅⋅⋅In case of success you get this response in the terminal: 
+
 ```console
 Yay! the API is valid
 ```
 
 ## Generating the NGSI-LD @context file
 
-Every working linked data system relies on @context files to supply the relevant information about the data. Creating such files by hand is a tedious and error-prone procedure, so it makes sense to automate the process by executing this command in the terminal: 
+Every working linked data system relies on @context files to supply the relevant information about the data. Creating such files by hand is a tedious and error-prone procedure, so it makes sense to automate the process.
+
+* Generate the NGSI-LD @context file corresponding to your data model by executing this command in the terminal: 
 
 ```console
 ./services ngsi [file]
