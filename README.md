@@ -67,13 +67,13 @@ components:
       description: 'Give a description of your data model, its scope and what it is used for.'
       properties:
         Entity 1:
-			description: 'Description of entity 1'
-			minimum: 0
-			maximum: 1
-			type: e.g array, boolean, integer, number, object, string
+		  description: 'Description of entity 1'
+		  minimum: 0
+		  maximum: 1
+		  type: e.g array, boolean, integer, number, object, string
         Entity N:
-			description: 'Description of entity N'
-			type: e.g array, boolean, integer, number, object, string
+		  description: 'Description of entity N'
+		  type: e.g array, boolean, integer, number, object, string
 info: 
   description: "Base Model Definitions from Smart Data Models"
   title: Data model title
@@ -116,7 +116,7 @@ To validate you data model you need to: 
 ./services validate [file.yaml]
 ```
 
-⋅⋅⋅In case of success you get this response in the terminal: 
+In case of success you get this response in the terminal: 
 
 ```console
 Yay! the API is valid
@@ -136,9 +136,13 @@ By opening the generated file you can find a structure like this.
 [<img src="https://cdn-images-1.medium.com/max/1600/1*QgFjDI8--s4s2CG4_OByIQ.png" />]
 
 The resultant @context file is a valid JSON-LD Context file usable by NGSI-LD applications. The file is structured into three parts:
-A list of standard terms and abbreviations - this avoids the necessity of repeating URIs and reduced the overall size of the file
-A series of defined entity types (e.g. Chloramines). These usually start with a capital letter.
-A list of attributes and enumerations (not shown in this example)
+* A list of standard terms and abbreviations - this avoids the necessity of repeating URIs and reduced the overall size of the file
+*  A series of defined entity types (e.g. Chloramines). These usually start with a capital letter.
+* A list of attributes and enumerations (not shown in this example)
+
+If a computer encounters an entity of `type=Chloramines` this really refers to a `https://uri.fiware.org/ns/data-models#Chloramines`
+
+
 
 ## Generating documentation of your data model: 
 
