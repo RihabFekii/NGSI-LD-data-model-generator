@@ -19,28 +19,6 @@ get in the way of the processing the data objects themselves.
 An attempt to solve this interoperability problem has been made within the JSON domain, and this has been done by adding
 an `@context` element to existing JSON data structures. This has led to the creation of the **JSON-LD** standard.
 
-## Prerequisites
-
-### Swagger
-
-The OpenAPI Specification (commonly known as Swagger) is an API description format for REST APIs. A Swaggger spec allows
-you to describe an entire API (such as NGSI-LD itself) however in this tutorial we shall be concentrating on using
-Swagger to define data models.
-
-API specifications can be written in YAML or JSON. The format is easy to learn and readable to both humans and machines.
-The complete OpenAPI Specification can be found on GitHub:
-[OpenAPI 3.0 Specification](https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.0.2.md). This is
-important since we will need a well defined structure to be able to generate `@context` files.
-
-### Docker
-
-To keep things interoperable across different environments, the file generator is running on
-[Docker](https://www.docker.com). **Docker** is a container technology which allows to different components isolated into their respective environments.
-
--   To install Docker on Windows follow the instructions [here](https://docs.docker.com/docker-for-windows/)
--   To install Docker on Mac follow the instructions [here](https://docs.docker.com/docker-for-mac/)
--   To install Docker on Linux follow the instructions [here](https://docs.docker.com/install/)
-
 
 # How to create from scratch an NGSI-LD data model
 
@@ -155,6 +133,29 @@ Basic documentation about NGSI-LD entities can be generated from a Swagger data 
 ```console
 ./services markdown [file]
 ```
+
+
+## Prerequisites
+
+### Swagger
+
+The OpenAPI Specification (commonly known as Swagger) is an API description format for REST APIs. A Swaggger spec allows
+you to describe an entire API (such as NGSI-LD itself) however in this tutorial we shall be concentrating on using
+Swagger to define data models.
+
+API specifications can be written in YAML or JSON. The format is easy to learn and readable to both humans and machines.
+The complete OpenAPI Specification can be found on GitHub:
+[OpenAPI 3.0 Specification](https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.0.2.md). This is
+important since we will need a well defined structure to be able to generate `@context` files.
+
+### Docker
+
+To keep things interoperable across different environments, the file generator is running on
+[Docker](https://www.docker.com). **Docker** is a container technology which allows to different components isolated into their respective environments.
+
+-   To install Docker on Windows follow the instructions [here](https://docs.docker.com/docker-for-windows/)
+-   To install Docker on Mac follow the instructions [here](https://docs.docker.com/docker-for-mac/)
+-   To install Docker on Linux follow the instructions [here](https://docs.docker.com/install/)
 
 # License
 
